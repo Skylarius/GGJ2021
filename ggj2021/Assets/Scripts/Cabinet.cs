@@ -34,6 +34,7 @@ public class Cabinet : MonoBehaviour
         Debug.Log("Collision Happened!");
         if(col.gameObject.tag == "Player" && GameManager.inventory.Count > 0)
         {
+            Debug.Log("It's a player!");
             interactionButton.SetActive(true);
             isPlayerNearby = true;
         }
