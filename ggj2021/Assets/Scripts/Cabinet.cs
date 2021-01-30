@@ -44,8 +44,9 @@ public class Cabinet : MonoBehaviour
             interactionButton.SetActive(true);
             isPlayerNearby = true;
         }
-        else if(col.gameObject.tag == "thief")
+        else if(col.gameObject.tag == "Thief")
         {
+            Debug.Log("It's a thief!");
             StealFragment();
         }
     }
@@ -79,8 +80,7 @@ public class Cabinet : MonoBehaviour
         {
             if (memory.GetComponent<Memory>().isComplete == false && memory.GetComponent<Memory>().fragments.Count > 0)
             {
-                GameObject fragment = memory.GetComponent<Memory>().fragments.Peek();
-                memory.GetComponent<Memory>().fragments.Pop();
+                GameObject fragment = memory.GetComponent<Memory>().RemoveFragment();
 
                 return fragment;
             }

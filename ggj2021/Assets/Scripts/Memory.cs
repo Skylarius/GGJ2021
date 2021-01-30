@@ -40,6 +40,7 @@ public class Memory : MonoBehaviour
     public GameObject RemoveFragment()
     {
         GameObject removedFragment = fragments.Peek();
+        gameObject.transform.GetChild(fragments.Count - 1).GetComponent<SpriteRenderer>().sprite = null;
         fragments.Pop();
 
         return removedFragment;
@@ -58,7 +59,6 @@ public class Memory : MonoBehaviour
     {
         dialogueBox = GameObject.Find("DialogueBox");
         dialogueText = GameObject.Find("DialogueBox").GetComponent<Text>();
-
     }
 
     // Update is called once per frame
