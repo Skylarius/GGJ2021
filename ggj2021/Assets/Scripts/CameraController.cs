@@ -16,6 +16,18 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.Lerp(transform.position, target.position + offset, Time.deltaTime * speed);
+        if (GetCloserToPlayer() == false) {
+            transform.position = Vector3.Lerp(transform.position, target.position + offset, Time.deltaTime * speed);
+        }
+    }
+
+    bool GetCloserToPlayer() {
+        RaycastHit hit;
+        float distance = Vector3.Magnitude(transform.position - target.transform.position);
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, distance)) {
+            transform.position = Vector3.Lerp(transform.position, target.position + Vector3.up * 2, Time.deltaTime * speed * 0.5f);
+            return true;
+        }
+        return false;
     }
 }
