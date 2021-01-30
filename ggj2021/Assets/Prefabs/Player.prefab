@@ -400,15 +400,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  jumpForce: 8
+  jumpForce: 6
   isPressingJump: 0
   isJumping: 0
   audioClips:
-  - {fileID: 8300000, guid: 5c59bfb01f2b76840b297bf137b158ca, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 83362063a63a2484d9c49a2c2ff9add1, type: 3}
+  - {fileID: 8300000, guid: 8a5d18700bfe03d409f707cf14735780, type: 3}
+  - {fileID: 8300000, guid: 1042210d7ee7a50419152644e6eb3989, type: 3}
+  - {fileID: 8300000, guid: 18984a29a74e50b43a2fa850b7f5c81f, type: 3}
+  - {fileID: 8300000, guid: f5dacf83111bc14428fdc85e07f95f66, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}

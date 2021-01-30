@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,6 +8,8 @@ public class PlayerController : MonoBehaviour
     public float jumpForce = 1;
     public bool isPressingJump = false;
     public bool isJumping = false;
+    public bool invulnerable = false;
+    private bool hasJumped = false, hasKilledEnemy = false;
     public AudioClip[] audioClips;
     public Animator animator;
     private AudioSource audioSource;
@@ -16,15 +17,23 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        StartCoroutine("StateMachine");
     }
 
     // Update is called once per frame
     void Update()
     {
-        AnimationStateMachine();
-        AudioStateMachine();
         Move();
         Jump();
+    }
+
+    IEnumerator StateMachine() {
+        while (true)
+        {
+            AnimationStateMachine();
+            AudioStateMachine();
+            yield return null;
+        }
     }
 
     void Move() {
@@ -39,9 +48,20 @@ public class PlayerController : MonoBehaviour
             if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), 1.2f))
             {
                 GetComponent<Rigidbody>().AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+                hasJumped = true;
             }
         }
         isJumping = (GetComponent<Rigidbody>().velocity.y < -0.1 || GetComponent<Rigidbody>().velocity.y > 0.1);
+
+        if (isJumping) {
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, 1.2f))
+            {
+                if (hit.transform.tag == "Thief") {
+                    hit.transform.gameObject.SendMessage("Die");
+                }
+            }
+        }
     }
 
     void AnimationStateMachine() {
@@ -51,25 +71,59 @@ public class PlayerController : MonoBehaviour
     }
 
     void AudioStateMachine() {
-        if (!audioSource) {
+        if (hasJumped) {
+            PlayAudioClip(Random.Range(1,5), stopPrevious: true);
+            hasJumped = false;
             return;
         }
-        if (Input.GetAxis("Horizontal") > 0 || Input.GetAxis("Vertical") >0) {
+        if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0) {
             PlayAudioClip(0);
+            return;
         }
-        if (isJumping) {
-           PlayAudioClip(1);
+        else {
+            StopAudioClip(0);
         }
     }
 
-    private void PlayAudioClip(int index) {
+    private void PlayAudioClip(int index, bool stopPrevious = false) {
         try {
+            if (!stopPrevious && audioSource.isPlaying) {
+                return;
+            }
             if (audioSource.clip != audioClips[index]) {
+                if (audioSource.clip) {
+                    audioSource.Stop();
+                }
                 audioSource.clip = audioClips[index];
                 audioSource.Play();
             }
-        } catch (Exception e) {
-            
+        } catch (System.Exception e) {
+
         }
+    }
+
+    private void StopAudioClip(int index) {
+        try {
+            if (audioSource.clip == audioClips[index]) {
+                audioSource.Stop();
+                audioSource.clip = null;
+            }
+        } catch (System.Exception e) {
+
+        }
+    }
+
+    void BeHit(Vector3 direction) {
+        if (invulnerable) {
+            return;
+        }
+        GetComponent<Rigidbody>().AddForce(direction * 3 * Time.deltaTime, ForceMode.Impulse);
+        StartCoroutine("Invulnerable");
+    }
+
+    IEnumerator Invulnerable() {
+        invulnerable = true;
+        yield return new WaitForSeconds(3f);
+        invulnerable = false;
     }
 }

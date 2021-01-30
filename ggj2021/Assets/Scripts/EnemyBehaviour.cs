@@ -34,7 +34,7 @@ public class EnemyBehaviour : MonoBehaviour
         while (true)
         {
             int chance = Random.Range(0, 10);
-            if (chance < 3) {
+            if (chance < 2) {
                 print("Going to the library!");
                 target = library;
                 while (Vector3.Magnitude(transform.position -library.position) > 2) {
@@ -43,6 +43,16 @@ public class EnemyBehaviour : MonoBehaviour
                 target = player;
             }
             yield return new WaitForSeconds(5f);
+        }
+    }
+
+    void Die() {
+        Destroy(gameObject);
+    }
+
+    private void OnTriggerStay(Collider other) {
+        if (other.gameObject == player.gameObject) {
+            other.gameObject.SendMessage("BeHit", Vector3.Normalize(player.transform.position - transform.position));
         }
     }
 
