@@ -5,8 +5,7 @@ using UnityEngine.UI;
 
 public class Memory : MonoBehaviour
 {
-    public int id;
-    public Queue<GameObject> fragments = new Queue<GameObject>();
+    public Stack<GameObject> fragments = new Stack<GameObject>();
     public bool isComplete = false;
     public Dialogue dialogue;
     private Text dialogueText;
@@ -17,10 +16,21 @@ public class Memory : MonoBehaviour
     //Method to add fragment to memory when deposited at cabinet
     public void AddFragment(GameObject fragment)
     {
-        fragments.Enqueue(fragment);
+        fragments.Push(fragment);
 
-        if(fragments.Count == 3)
+        Sprite sprite = fragment.GetComponent<SpriteRenderer>().sprite;
+
+        if(fragments.Count == 1)
         {
+            gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = sprite;
+        }
+        else if(fragments.Count == 2)
+        {
+            gameObject.transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = sprite;
+        }
+        else if(fragments.Count == 3)
+        {
+            gameObject.transform.GetChild(2).GetComponent<SpriteRenderer>().sprite = sprite;
             isComplete = true;
             CompleteMemory();
         }
@@ -29,7 +39,8 @@ public class Memory : MonoBehaviour
     //Method to remove single fragment to memory when stole by enemy at cabinet
     public GameObject RemoveFragment()
     {
-        GameObject removedFragment = fragments.Dequeue();
+        GameObject removedFragment = fragments.Peek();
+        fragments.Pop();
 
         return removedFragment;
     }
