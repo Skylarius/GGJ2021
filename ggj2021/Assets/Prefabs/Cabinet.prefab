@@ -60,6 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33cc6ba55ee229848acca3182c124622, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  memories: []
   interactionButton: {fileID: 437620657662299034}
 --- !u!1 &437620657662299034
 GameObject:
@@ -230,6 +231,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 437620657193267081}
     m_Modifications:
+    - target: {fileID: 26723235387633564, guid: f514bf99a60db904f84b449fe39502ac,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 26723235387633564, guid: f514bf99a60db904f84b449fe39502ac,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 26723235387633564, guid: f514bf99a60db904f84b449fe39502ac,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 26723235387633564, guid: f514bf99a60db904f84b449fe39502ac,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 26723235387633564, guid: f514bf99a60db904f84b449fe39502ac,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.07
+      objectReference: {fileID: 0}
     - target: {fileID: 41626527114234318, guid: f514bf99a60db904f84b449fe39502ac,
         type: 3}
       propertyPath: m_RootOrder
@@ -314,10 +340,85 @@ PrefabInstance:
         remember spending my afternoon on his bed, looking at the ceiling and listening
         to the music.\r\n(PRESS ENTER TO CONTINUE)\n"
       objectReference: {fileID: 0}
+    - target: {fileID: 41626528671005110, guid: f514bf99a60db904f84b449fe39502ac,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 41626528671005110, guid: f514bf99a60db904f84b449fe39502ac,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 41626528671005110, guid: f514bf99a60db904f84b449fe39502ac,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 41626528671005110, guid: f514bf99a60db904f84b449fe39502ac,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 41626528671005110, guid: f514bf99a60db904f84b449fe39502ac,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.07
+      objectReference: {fileID: 0}
     - target: {fileID: 227900447673632303, guid: f514bf99a60db904f84b449fe39502ac,
         type: 3}
       propertyPath: m_TagString
       value: Memory
+      objectReference: {fileID: 0}
+    - target: {fileID: 347534898370520398, guid: f514bf99a60db904f84b449fe39502ac,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 347534898370520398, guid: f514bf99a60db904f84b449fe39502ac,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 347534898370520398, guid: f514bf99a60db904f84b449fe39502ac,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 347534898370520398, guid: f514bf99a60db904f84b449fe39502ac,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 347534898370520398, guid: f514bf99a60db904f84b449fe39502ac,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 392731199571093125, guid: f514bf99a60db904f84b449fe39502ac,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 392731199571093125, guid: f514bf99a60db904f84b449fe39502ac,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 392731199571093125, guid: f514bf99a60db904f84b449fe39502ac,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 392731199571093125, guid: f514bf99a60db904f84b449fe39502ac,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -6.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 392731199571093125, guid: f514bf99a60db904f84b449fe39502ac,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.07
       objectReference: {fileID: 0}
     - target: {fileID: 757477465622267814, guid: f514bf99a60db904f84b449fe39502ac,
         type: 3}
@@ -342,16 +443,9 @@ PrefabInstance:
     - target: {fileID: 822957997868072668, guid: f514bf99a60db904f84b449fe39502ac,
         type: 3}
       propertyPath: dialogue.sentence
-      value: 'Our house.
-
-        The first day we moved there it was totally empty.
-
-        On
-        of the first things that we brought in was my piano, and I played, for us,
-        in the empty rooms, while she was sitting on a cardboard box.
-
-        (PRESS
-        ENTER TO CONTINUE)'
+      value: "I joined the orchestra of my town.\r\nI remembered looking like a penguin
+        in my suit.\r\nI don\u2019t remember...was she there?\r\n(PRESS ENTER TO
+        CONTINUE)"
       objectReference: {fileID: 0}
     - target: {fileID: 996260533071390461, guid: f514bf99a60db904f84b449fe39502ac,
         type: 3}
@@ -371,14 +465,38 @@ PrefabInstance:
     - target: {fileID: 996260533071390461, guid: f514bf99a60db904f84b449fe39502ac,
         type: 3}
       propertyPath: dialogue.sentence
-      value: 'Once I had an end of the year exhibition of my piano course.
+      value: 'During high school I finally began understanding music.
 
-        It
-        was held in an old church in my town that terrified me since all the statues
-        and paintings were death themed and there were a lot of skulls around.
+        The
+        rules finally came together and I enjoyed a lot playing and beginning to
+        compose my own music
 
-        (PRESS
-        ENTER TO CONTINUE)'
+        (PRESS ENTER TO CONTINUE)'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1754900694213300526, guid: f514bf99a60db904f84b449fe39502ac,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1754900694213300526, guid: f514bf99a60db904f84b449fe39502ac,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1754900694213300526, guid: f514bf99a60db904f84b449fe39502ac,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1754900694213300526, guid: f514bf99a60db904f84b449fe39502ac,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 1754900694213300526, guid: f514bf99a60db904f84b449fe39502ac,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.07
       objectReference: {fileID: 0}
     - target: {fileID: 1978714281296636250, guid: f514bf99a60db904f84b449fe39502ac,
         type: 3}
@@ -403,7 +521,9 @@ PrefabInstance:
     - target: {fileID: 2650804919396246825, guid: f514bf99a60db904f84b449fe39502ac,
         type: 3}
       propertyPath: dialogue.sentence
-      value: (PRESS ENTER TO CONTINUE)
+      value: "Her face?\r\nI can\u2019t remember her lovely expressions\u2026\r\nMy
+        concerto I wrote it, yes...but the melody...I don\u2019t remember it\u2026\r\n(PRESS
+        ENTER TO CONTINUE)"
       objectReference: {fileID: 0}
     - target: {fileID: 3054338225159222615, guid: f514bf99a60db904f84b449fe39502ac,
         type: 3}
@@ -423,15 +543,9 @@ PrefabInstance:
     - target: {fileID: 3054338225159222615, guid: f514bf99a60db904f84b449fe39502ac,
         type: 3}
       propertyPath: dialogue.sentence
-      value: 'I joined the orchestra of my town.
-
-        I remembered looking like
-        a penguin in my suit.
-
-        The first day I played in front of hundreds
-        of people was the best day of my life.
-
-        (PRESS ENTER TO CONTINUE)'
+      value: "I was composing my first concerto for piano and the orchestra was enthusiastic
+        about it.\r\nI rushed home to tell her the news...but...where...I don\u2019t
+        remember where we lived.\r\n(PRESS ENTER TO CONTINUE)"
       objectReference: {fileID: 0}
     - target: {fileID: 3654540888098091346, guid: f514bf99a60db904f84b449fe39502ac,
         type: 3}
@@ -464,6 +578,31 @@ PrefabInstance:
 
         (PRESS
         ENTER TO CONTINUE)'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003217298965918425, guid: f514bf99a60db904f84b449fe39502ac,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003217298965918425, guid: f514bf99a60db904f84b449fe39502ac,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003217298965918425, guid: f514bf99a60db904f84b449fe39502ac,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003217298965918425, guid: f514bf99a60db904f84b449fe39502ac,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -6.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003217298965918425, guid: f514bf99a60db904f84b449fe39502ac,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.07
       objectReference: {fileID: 0}
     - target: {fileID: 4518295383396396300, guid: f514bf99a60db904f84b449fe39502ac,
         type: 3}
@@ -520,13 +659,38 @@ PrefabInstance:
     - target: {fileID: 5243650993553004744, guid: f514bf99a60db904f84b449fe39502ac,
         type: 3}
       propertyPath: dialogue.sentence
-      value: 'During high school I finally began understanding music.
+      value: 'Her face...her lovely expressions...her long hair held together by
+        a clip hair.
 
-        The
-        rules finally came together to me and I enjoyed a lot playing and beginning
-        to compose my own music.
+        I remember she used to lay on my bed, with her eyes
+        closed while I played the piano.
 
         (PRESS ENTER TO CONTINUE)'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5489430936376031461, guid: f514bf99a60db904f84b449fe39502ac,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5489430936376031461, guid: f514bf99a60db904f84b449fe39502ac,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5489430936376031461, guid: f514bf99a60db904f84b449fe39502ac,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 5489430936376031461, guid: f514bf99a60db904f84b449fe39502ac,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 5489430936376031461, guid: f514bf99a60db904f84b449fe39502ac,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.07
       objectReference: {fileID: 0}
     - target: {fileID: 5621587631531979721, guid: f514bf99a60db904f84b449fe39502ac,
         type: 3}
@@ -546,14 +710,71 @@ PrefabInstance:
     - target: {fileID: 5621587631531979721, guid: f514bf99a60db904f84b449fe39502ac,
         type: 3}
       propertyPath: dialogue.sentence
-      value: "Her face...her lovely expressions...her long hair held together by
-        a clip hair.\r\nI remember she used to lay on my bed, with her eyes closed
-        while I played the piano\r.\n(PRESS ENTER TO CONTINUE)"
+      value: 'Our house.
+
+        The first day we moved there it was totally empty.
+
+        One
+        of the first things that we brought in was my piano, and I played, for us,
+        in the empty rooms, while she was sitting on a cardboard box.
+
+        (PRESS
+        ENTER TO CONTINUE)'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6417512836937947549, guid: f514bf99a60db904f84b449fe39502ac,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6417512836937947549, guid: f514bf99a60db904f84b449fe39502ac,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6417512836937947549, guid: f514bf99a60db904f84b449fe39502ac,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 6417512836937947549, guid: f514bf99a60db904f84b449fe39502ac,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6417512836937947549, guid: f514bf99a60db904f84b449fe39502ac,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.07
       objectReference: {fileID: 0}
     - target: {fileID: 7252632175428131282, guid: f514bf99a60db904f84b449fe39502ac,
         type: 3}
       propertyPath: m_TagString
       value: Memory
+      objectReference: {fileID: 0}
+    - target: {fileID: 7298278746150517888, guid: f514bf99a60db904f84b449fe39502ac,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7298278746150517888, guid: f514bf99a60db904f84b449fe39502ac,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7298278746150517888, guid: f514bf99a60db904f84b449fe39502ac,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 7298278746150517888, guid: f514bf99a60db904f84b449fe39502ac,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 7298278746150517888, guid: f514bf99a60db904f84b449fe39502ac,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.07
       objectReference: {fileID: 0}
     - target: {fileID: 7478370617094099889, guid: f514bf99a60db904f84b449fe39502ac,
         type: 3}
@@ -564,6 +785,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Memory
+      objectReference: {fileID: 0}
+    - target: {fileID: 7920843229019420492, guid: f514bf99a60db904f84b449fe39502ac,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7920843229019420492, guid: f514bf99a60db904f84b449fe39502ac,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7920843229019420492, guid: f514bf99a60db904f84b449fe39502ac,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 7920843229019420492, guid: f514bf99a60db904f84b449fe39502ac,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -6.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 7920843229019420492, guid: f514bf99a60db904f84b449fe39502ac,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.07
       objectReference: {fileID: 0}
     - target: {fileID: 8490201622705390095, guid: f514bf99a60db904f84b449fe39502ac,
         type: 3}
@@ -583,7 +829,9 @@ PrefabInstance:
     - target: {fileID: 8490201622705390095, guid: f514bf99a60db904f84b449fe39502ac,
         type: 3}
       propertyPath: dialogue.sentence
-      value: (PRESS ENTER TO CONTINUE)
+      value: "It\u2019s all black...and then it\u2019s one thousand colors\u2026\r\nIt
+        doesn\u2019t matter how much I push myself..I..don\u2019t remember...I can\u2019t
+        remember.\r\nBut...the melody...my concerto...\r\n(PRESS ENTER TO CONTINUE)"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f514bf99a60db904f84b449fe39502ac, type: 3}

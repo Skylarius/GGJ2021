@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Cabinet : MonoBehaviour
 {
-    List<Memory> Memories = new List<Memory>();
+    public List<GameObject> memories = new List<GameObject>();
     public GameObject interactionButton;
     bool isPlayerNearby = false;
 
@@ -12,6 +12,12 @@ public class Cabinet : MonoBehaviour
     void Start()
     {
         interactionButton.SetActive(false);
+        GameObject Mems = gameObject.transform.GetChild(2).gameObject;
+
+        for (int i = 0; i < 10; i++)
+        {
+            memories.Add(Mems.transform.GetChild(i).gameObject);
+        }
     }
 
     // Update is called once per frame
@@ -38,9 +44,10 @@ public class Cabinet : MonoBehaviour
             interactionButton.SetActive(true);
             isPlayerNearby = true;
         }
-        else if(col.gameObject.tag == "thief")
+        else if(col.gameObject.tag == "Thief")
         {
-            //StealFragment();
+            Debug.Log("It's a thief!");
+            StealFragment();
         }
     }
 
@@ -67,8 +74,18 @@ public class Cabinet : MonoBehaviour
         }
     }
 
-    /*public Fragment StealFragment()
+    public GameObject StealFragment()
     {
+        foreach(GameObject memory in memories)
+        {
+            if (memory.GetComponent<Memory>().isComplete == false && memory.GetComponent<Memory>().fragments.Count > 0)
+            {
+                GameObject fragment = memory.GetComponent<Memory>().RemoveFragment();
 
-    }*/
+                return fragment;
+            }
+        }
+
+        return null;
+    }
 }
