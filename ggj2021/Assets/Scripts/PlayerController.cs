@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -21,6 +22,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         AnimationStateMachine();
+        AudioStateMachine();
         Move();
         Jump();
     }
@@ -32,16 +34,12 @@ public class PlayerController : MonoBehaviour
     }
 
     void Jump() {
-        if (Input.GetAxis("Jump") > 0 && isPressingJump == false) {    
+        if (Input.GetButtonDown("Jump")) {    
             // Does the ray intersect any objects excluding the player layer
             if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), 1.2f))
             {
                 GetComponent<Rigidbody>().AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-                isPressingJump = true;
             }
-        }
-        if (Input.GetAxis("Jump") == 0) {
-            isPressingJump = false;
         }
         isJumping = (GetComponent<Rigidbody>().velocity.y < -0.1 || GetComponent<Rigidbody>().velocity.y > 0.1);
     }
@@ -57,10 +55,21 @@ public class PlayerController : MonoBehaviour
             return;
         }
         if (Input.GetAxis("Horizontal") > 0 || Input.GetAxis("Vertical") >0) {
-            audioSource.clip = audioClips[0];
+            PlayAudioClip(0);
         }
         if (isJumping) {
-            audioSource.clip = audioClips[1];
+           PlayAudioClip(1);
+        }
+    }
+
+    private void PlayAudioClip(int index) {
+        try {
+            if (audioSource.clip != audioClips[index]) {
+                audioSource.clip = audioClips[index];
+                audioSource.Play();
+            }
+        } catch (Exception e) {
+            
         }
     }
 }

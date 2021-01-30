@@ -24,7 +24,7 @@ public class CameraController : MonoBehaviour
     bool GetCloserToPlayer() {
         RaycastHit hit;
         float distance = Vector3.Magnitude(transform.position - target.transform.position);
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, distance)) {
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, distance - 2)) {
             transform.position = Vector3.Lerp(transform.position, target.position + Vector3.up * 2, Time.deltaTime * speed * 0.5f);
             return true;
         }
