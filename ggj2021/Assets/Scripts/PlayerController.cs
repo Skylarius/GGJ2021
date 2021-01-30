@@ -8,11 +8,13 @@ public class PlayerController : MonoBehaviour
     public float jumpForce = 1;
     public bool isPressingJump = false;
     public bool isJumping = false;
+    public AudioClip[] audioClips;
     public Animator animator;
+    private AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -41,12 +43,24 @@ public class PlayerController : MonoBehaviour
         if (Input.GetAxis("Jump") == 0) {
             isPressingJump = false;
         }
-        isJumping = (GetComponent<Rigidbody>().velocity.y < -1 || GetComponent<Rigidbody>().velocity.y > 1);
+        isJumping = (GetComponent<Rigidbody>().velocity.y < -0.1 || GetComponent<Rigidbody>().velocity.y > 0.1);
     }
 
     void AnimationStateMachine() {
         animator.SetFloat("X_direction", Input.GetAxis("Horizontal"));
         animator.SetFloat("Z_direction", Input.GetAxis("Vertical"));
         animator.SetBool("isJumping", isJumping);
+    }
+
+    void AudioStateMachine() {
+        if (!audioSource) {
+            return;
+        }
+        if (Input.GetAxis("Horizontal") > 0 || Input.GetAxis("Vertical") >0) {
+            audioSource.clip = audioClips[0];
+        }
+        if (isJumping) {
+            audioSource.clip = audioClips[1];
+        }
     }
 }
