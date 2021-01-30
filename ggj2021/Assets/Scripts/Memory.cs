@@ -9,8 +9,8 @@ public class Memory : MonoBehaviour
     public Queue<GameObject> fragments = new Queue<GameObject>();
     public bool isComplete = false;
     public Dialogue dialogue;
-    public Text dialogueText;
-    public GameObject dialogueBox;
+    private Text dialogueText;
+    private GameObject dialogueBox;
 
     public static bool gameIsPaused = false;
 
@@ -45,7 +45,9 @@ public class Memory : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        dialogueBox = GameObject.Find("DialogueBox");
+        dialogueText = GameObject.Find("DialogueBox").GetComponent<Text>();
+
     }
 
     // Update is called once per frame
