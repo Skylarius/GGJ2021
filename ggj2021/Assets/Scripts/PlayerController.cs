@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
     void Move() {
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
-        transform.position += (Vector3.right * x + Vector3.forward * z) * Time.deltaTime;
+        transform.position += (Vector3.right * x + Vector3.forward * z) * speed * Time.deltaTime;
     }
 
     void Jump() {
