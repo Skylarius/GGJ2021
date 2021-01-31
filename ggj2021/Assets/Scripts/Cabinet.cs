@@ -26,9 +26,9 @@ public class Cabinet : MonoBehaviour
     {
         if(isPlayerNearby)
         {
-            if(Input.GetKeyDown(KeyCode.E))
+            if(Input.GetKeyDown(KeyCode.E) && GameManager.inventory.Count > 0)
             {
-                DepositAllFragments();
+                DepositOneFragment();
             }
         }
     }
@@ -59,7 +59,17 @@ public class Cabinet : MonoBehaviour
         }
     }
 
-    void DepositAllFragments()
+    void DepositOneFragment()
+    {
+        int inventoryCount = GameManager.inventory.Count;
+
+        GameObject fragment = GameManager.inventory.Dequeue();
+        GameObject memory = fragment.GetComponent<Fragment>().memory;
+        player.transform.GetChild(0).GetChild(inventoryCount - 1).gameObject.GetComponent<SpriteRenderer>().sprite = null;
+        memory.GetComponent<Memory>().AddFragment(fragment);
+    }
+
+    /*void DepositAllFragments()
     {
         int inventoryCount = GameManager.inventory.Count;
 
@@ -70,7 +80,7 @@ public class Cabinet : MonoBehaviour
             player.transform.GetChild(0).GetChild(i).gameObject.GetComponent<SpriteRenderer>().sprite = null;
             memory.GetComponent<Memory>().AddFragment(fragment);
         }
-    }
+    }*/
 
     public GameObject StealFragment()
     {

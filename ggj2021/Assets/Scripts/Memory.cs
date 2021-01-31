@@ -8,6 +8,7 @@ public class Memory : MonoBehaviour
     public Stack<GameObject> fragments = new Stack<GameObject>();
     public bool isComplete = false;
     public Dialogue dialogue;
+    public GameObject messageBackground;
     private Text dialogueText;
     private GameObject dialogueBox;
 
@@ -51,6 +52,7 @@ public class Memory : MonoBehaviour
     {
         gameIsPaused = true;
         Time.timeScale = 0f;
+        //messageBackground.GetComponent<Image>().enabled = true;
         dialogueBox.SetActive(true);
         dialogueText.text = dialogue.sentence;
     }
@@ -69,6 +71,7 @@ public class Memory : MonoBehaviour
         {
             if(gameIsPaused)
             {
+                //messageBackground.GetComponent<Image>().enabled = false;
                 dialogueBox.SetActive(false);
                 gameIsPaused = false;
                 Time.timeScale = 1f;
