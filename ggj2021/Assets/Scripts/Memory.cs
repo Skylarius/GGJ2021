@@ -9,6 +9,7 @@ public class Memory : MonoBehaviour
     public bool isComplete = false;
     public Dialogue dialogue;
     public GameObject messageBackground;
+    public Sprite sprite;
     private Text dialogueText;
     private GameObject dialogueBox;
 
@@ -52,9 +53,10 @@ public class Memory : MonoBehaviour
     {
         gameIsPaused = true;
         Time.timeScale = 0f;
+        transform.parent.parent.GetChild(0).gameObject.GetComponent<SpriteRenderer>().sprite = sprite;
         //messageBackground.GetComponent<Image>().enabled = true;
-        dialogueBox.SetActive(true);
-        dialogueText.text = dialogue.sentence;
+        //dialogueBox.SetActive(true);
+        //dialogueText.text = dialogue.sentence;
     }
 
     // Start is called before the first frame update
@@ -73,7 +75,8 @@ public class Memory : MonoBehaviour
             if(gameIsPaused)
             {
                 //messageBackground.GetComponent<Image>().enabled = false;
-                dialogueBox.SetActive(false);
+                //dialogueBox.SetActive(false);
+                transform.parent.parent.GetChild(0).gameObject.GetComponent<SpriteRenderer>().sprite = null;
                 gameIsPaused = false;
                 Time.timeScale = 1f;
             }
