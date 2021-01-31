@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7197347633303250946}
+  - component: {fileID: 1214146522991402739}
   m_Layer: 0
   m_Name: Fragments
   m_TagString: Untagged
@@ -60,6 +61,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1214146522991402739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7362825163664899593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c5a8aab542668b40a094fc2e4384008, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickUpQueue:
+  - {fileID: 8300000, guid: 03baa98ee12c6ae4085d351f3e024d58, type: 3}
+  - {fileID: 8300000, guid: 05908073bbcef1947925a6e3f2aba390, type: 3}
+  - {fileID: 8300000, guid: 2ff6f9fed7bf2704c88a805e18611169, type: 3}
+  - {fileID: 8300000, guid: 0153cb40fdc43c84693e29216a36a63a, type: 3}
+  - {fileID: 8300000, guid: 5685c3b3166ecb748927a750943dec51, type: 3}
+  - {fileID: 8300000, guid: f2232ba06a5ee694aa810fae2414b9a9, type: 3}
+  - {fileID: 8300000, guid: 8c482d238759f95429a9f39a14f964fd, type: 3}
+  - {fileID: 8300000, guid: 1bf37fd7076c1e745b78034451de4197, type: 3}
+  - {fileID: 8300000, guid: 346ef524282b29745bac4d3d1bdf0260, type: 3}
+  - {fileID: 8300000, guid: eeea6bed0350df84bbf5be2a43d64e13, type: 3}
+  - {fileID: 8300000, guid: c3661e82a95ca544fbe007ee9ce4d186, type: 3}
+  - {fileID: 8300000, guid: a8c5997267bf9674684e42779c42b7fa, type: 3}
+  - {fileID: 8300000, guid: f8b020153a26b3e4c98599c64a1aaae5, type: 3}
+  - {fileID: 8300000, guid: 73ea929fd6823f14ea186de807fd9063, type: 3}
 --- !u!1001 &1002671093278438533
 PrefabInstance:
   m_ObjectHideFlags: 0
