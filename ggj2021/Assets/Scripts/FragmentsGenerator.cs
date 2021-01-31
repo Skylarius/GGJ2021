@@ -7,10 +7,11 @@ public class FragmentsGenerator : MonoBehaviour
 {
     // Start is called before the first frame update
     public Transform FragmentsContainer;
-    public List<GameObject> Fragments;
-    public Transform[] Placeholders;
-    public bool[] FilledPlaceholdersOneHot;
+    public List<GameObject> Fragments; //total fragments list
+    public Transform[] Placeholders; //all placeholders place
+    public bool[] FilledPlaceholdersOneHot; //array wwith true-> placeholder is full, false -> it's not
     public int fragmentsWindow, placeholdersWindow;
+    public Transform boxOfFragments;
 
     void Start()
     {
@@ -34,7 +35,7 @@ public class FragmentsGenerator : MonoBehaviour
             placeholdersWindow = 3;
         }
         else if (GameManager.completedMemoriesCounter <5) {
-            fragmentsWindow = 12;
+            fragmentsWindow = 21;
             placeholdersWindow = 6;
         }
         else {
@@ -45,7 +46,13 @@ public class FragmentsGenerator : MonoBehaviour
 
     IEnumerator FragmentsGeneratorCoroutine() {
         while (GameManager.GameOver == false) {
+            CheckFragmentsAndPlaceholders();
             int randomFragmentNumber = Random.Range(0, fragmentsWindow);
+            if (isFragmentInTheBox(Fragments[randomFragmentNumber]) == false) {
+                print("Fragment " + randomFragmentNumber + " is not in the box");
+                yield return null;
+                continue;
+            }
             List<int> freePlaceholders = new List<int>();
             for (int i=0; i<placeholdersWindow; i++) {
                 if (FilledPlaceholdersOneHot[i] == false) {
@@ -60,12 +67,42 @@ public class FragmentsGenerator : MonoBehaviour
             GameObject fragment = Fragments[randomFragmentNumber];
             Vector3 placeholderPosition = Placeholders[randomPlaceholderNumber].position;
             fragment.transform.position = placeholderPosition;
-            Fragments.RemoveAt(randomFragmentNumber);
             FilledPlaceholdersOneHot[randomPlaceholderNumber] = true;
             print("randomFragmentNumber" + randomFragmentNumber);
             print("randomPlaceholderNumber" + randomPlaceholderNumber);
             print("Fragments.Count" + Fragments.Count);
             yield return new WaitForSeconds(5f);
         }
+    }
+
+    void CheckFragmentsAndPlaceholders() {
+        for (int i=0; i<FilledPlaceholdersOneHot.Length; i++) {
+            if (FilledPlaceholdersOneHot[i] == false) {
+                continue;
+            }
+            // if placeholder looks filled
+            bool filled = false;
+            foreach (GameObject fragment in Fragments) {
+                if (fragment.activeSelf && Vector3.Distance(fragment.transform.position, Placeholders[i].position) < 1.5f) {
+                    filled = true;
+                    break;
+                }
+            }
+            if (filled) {
+                FilledPlaceholdersOneHot[i] = true;
+            }
+            else {
+                FilledPlaceholdersOneHot[i] = false;
+            }
+
+        }
+    }
+
+    bool isFragmentInTheBox(GameObject fragment) {
+        return Vector3.Distance(fragment.transform.position, boxOfFragments.position) < 50;
+    }
+
+    void dropFragments() {
+
     }
 }

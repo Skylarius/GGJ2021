@@ -12,6 +12,8 @@ public class EnemyBehaviour : MonoBehaviour
     public Vector3 defaultLocalScale;
     public Animator animator;
 
+    public Transform boxOfFragments;
+
     void Start () {
         agent = GetComponent<NavMeshAgent>();
         target = player;
@@ -46,7 +48,8 @@ public class EnemyBehaviour : MonoBehaviour
                 while (Vector3.Magnitude(transform.position - library.position) > 2) {
                     yield return new WaitForSeconds(1f);
                 }
-                library.SendMessage("StealFragment");
+                GameObject fragment = library.GetComponent<Cabinet>().StealFragment();
+                putInBoxOfFragments(fragment);
                 target = player;
             }
             yield return new WaitForSeconds(5f);
@@ -71,6 +74,11 @@ public class EnemyBehaviour : MonoBehaviour
         animator.SetBool("explosion", true);
         yield return new WaitForSeconds(2f);
         Destroy(gameObject);
+    }
+
+    void putInBoxOfFragments(GameObject fragment) {
+        fragment.SetActive(true);
+        fragment.transform.position = boxOfFragments.position;
     }
 
 
