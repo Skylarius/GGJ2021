@@ -45,8 +45,11 @@
      <Compile Include="Assets\Scripts\Fragment.cs" />
      <Compile Include="Assets\Scripts\FragmentsGenerator.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
+     <Compile Include="Assets\Scripts\HandlerOfEvents.cs" />
      <Compile Include="Assets\Scripts\MainMenu.cs" />
      <Compile Include="Assets\Scripts\Memory.cs" />
+     <Compile Include="Assets\Scripts\PickUpSound.cs" />
+     <Compile Include="Assets\Scripts\PickUpSoundsManagement.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.18f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

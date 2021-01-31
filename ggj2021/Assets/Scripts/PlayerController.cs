@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     public AudioClip[] audioClips;
     public Animator animator;
     private AudioSource audioSource;
+
+    public bool blocked = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,8 +25,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Move();
-        Jump();
+        if (blocked ==  false) {
+            Move();
+            Jump();
+        }
     }
 
     IEnumerator StateMachine() {
