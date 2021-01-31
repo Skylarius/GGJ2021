@@ -6,6 +6,7 @@ public class Cabinet : MonoBehaviour
 {
     public List<GameObject> memories = new List<GameObject>();
     public GameObject interactionButton;
+    private GameObject player;
     bool isPlayerNearby = false;
 
     // Start is called before the first frame update
@@ -37,17 +38,13 @@ public class Cabinet : MonoBehaviour
     //If enemy is nearby it remove one fragment from one memory.
     void OnCollisionEnter(Collision col)
     {
+        player = col.gameObject;
         Debug.Log("Collision Happened!");
         if(col.gameObject.tag == "Player" && GameManager.inventory.Count > 0)
         {
             Debug.Log("It's a player!");
             interactionButton.SetActive(true);
             isPlayerNearby = true;
-        }
-        else if(col.gameObject.tag == "Thief")
-        {
-            Debug.Log("It's a thief!");
-            StealFragment();
         }
     }
 
@@ -70,6 +67,7 @@ public class Cabinet : MonoBehaviour
         {
             GameObject fragment = GameManager.inventory.Dequeue();
             GameObject memory = fragment.GetComponent<Fragment>().memory;
+            player.transform.GetChild(0).GetChild(i).gameObject.GetComponent<SpriteRenderer>().sprite = null;
             memory.GetComponent<Memory>().AddFragment(fragment);
         }
     }
@@ -85,7 +83,6 @@ public class Cabinet : MonoBehaviour
                 return fragment;
             }
         }
-
         return null;
     }
 }
