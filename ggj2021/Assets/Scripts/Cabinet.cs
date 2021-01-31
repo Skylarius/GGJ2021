@@ -7,6 +7,8 @@ public class Cabinet : MonoBehaviour
     public List<GameObject> memories = new List<GameObject>();
     public GameObject interactionButton;
     private GameObject player;
+    public AudioSource depositSound;
+    public AudioClip[] depositSounds = new AudioClip[5];
     bool isPlayerNearby = false;
 
     // Start is called before the first frame update
@@ -63,10 +65,18 @@ public class Cabinet : MonoBehaviour
     {
         int inventoryCount = GameManager.inventory.Count;
 
+        RandomDepositSound();
         GameObject fragment = GameManager.inventory.Dequeue();
         GameObject memory = fragment.GetComponent<Fragment>().memory;
         player.transform.GetChild(0).GetChild(inventoryCount - 1).gameObject.GetComponent<SpriteRenderer>().sprite = null;
+        RandomDepositSound();
         memory.GetComponent<Memory>().AddFragment(fragment);
+    }
+
+    void RandomDepositSound()
+    {
+        depositSound.clip = depositSounds[Random.Range(0, depositSounds.Length)];
+        depositSound.Play();
     }
 
     /*void DepositAllFragments()
