@@ -8,6 +8,7 @@ public class CameraController : MonoBehaviour
     private Vector3 offset;
     public Transform target;
     public float speed = 1;
+    public bool blocked = false;
     void Start()
     {
         offset = transform.position - target.position;
@@ -16,6 +17,7 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (blocked) return;
         if (GetCloserToPlayer() == false) {
             transform.position = Vector3.Lerp(transform.position, target.position + offset, Time.deltaTime * speed);
         }

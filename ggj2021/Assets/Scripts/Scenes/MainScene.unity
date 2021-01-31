@@ -2708,6 +2708,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 828369030}
   speed: 2
+  blocked: 0
 --- !u!1 &1010381641
 GameObject:
   m_ObjectHideFlags: 0
@@ -2739,7 +2740,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 915422688}
   piano: {fileID: 1426122905}
-  camera: {fileID: 963194225}
+  myCamera: {fileID: 963194225}
   finalPointOfCamera: {fileID: 859156434}
   objectsToDisable:
   - {fileID: 112517222}

@@ -5,7 +5,7 @@ using UnityEngine;
 public class HandlerOfEvents : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject player, piano, camera, finalPointOfCamera;
+    public GameObject player, piano, myCamera, finalPointOfCamera;
     public GameObject[] objectsToDisable;
     public GameObject[] objectsToEnable;
 
@@ -43,8 +43,12 @@ public class HandlerOfEvents : MonoBehaviour
             yield return null;
         }
         player.GetComponent<PlayerController>().blocked = true;
-        while (Vector3.Distance(camera.transform.position, finalPointOfCamera.transform.position) > 1) {
-            camera.transform.position = Vector3.Lerp(finalPointOfCamera.transform.position, camera.transform.position, 1);
+        myCamera.GetComponent<CameraController>().blocked = true;
+        float i = 0f;
+        while (Vector3.Distance(finalPointOfCamera.transform.position, myCamera.transform.position) > 1) {
+            myCamera.transform.position = Vector3.Lerp(myCamera.transform.position, finalPointOfCamera.transform.position, i/1000f);
+            i = i + 0.001f;
+            yield return null;
         }
         Application.Quit();
         
