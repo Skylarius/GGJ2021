@@ -45,11 +45,17 @@ public class EnemyBehaviour : MonoBehaviour
                 print("Going to the library!");
                 target = library;
                 //Go to the library and STEAL!
-                while (Vector3.Magnitude(transform.position - library.position) > 2) {
-                    yield return new WaitForSeconds(1f);
+                while (Vector3.Distance(transform.position, library.position) > 3) {
+                    yield return new WaitForSeconds(0.5f);
                 }
                 GameObject fragment = library.GetComponent<Cabinet>().StealFragment();
-                putInBoxOfFragments(fragment);
+                if (fragment) {
+                    print("Stealing fragment!!!!!!!!!!");
+                    print(fragment.gameObject.name);
+                    putInBoxOfFragments(fragment);
+                } else {
+                    print("FAIL Stealing fragment :( !!");
+                }
                 target = player;
             }
             yield return new WaitForSeconds(5f);

@@ -3753,7 +3753,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: b91b75752f1b3f94a8f907938b63ccdd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6354,6 +6354,11 @@ PrefabInstance:
       propertyPath: library
       value: 
       objectReference: {fileID: 1859236558}
+    - target: {fileID: 7596343674324013602, guid: 124fc0a3f9c27f641b1e03380047a674,
+        type: 3}
+      propertyPath: boxOfFragments
+      value: 
+      objectReference: {fileID: 2131975203}
     - target: {fileID: 7596343674324013602, guid: 124fc0a3f9c27f641b1e03380047a674,
         type: 3}
       propertyPath: PlansPositions.Array.size

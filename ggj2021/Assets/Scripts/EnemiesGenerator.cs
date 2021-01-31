@@ -12,7 +12,7 @@ public class EnemiesGenerator : MonoBehaviour
 
     public static int enemiesCounter = 0;
 
-    public Transform player, library;
+    public Transform player, library, boxOfFragments;
 
     void Start()
     {
@@ -27,6 +27,7 @@ public class EnemiesGenerator : MonoBehaviour
                     enemy.transform.position = Plans[planIndex].position;
                     enemy.GetComponent<EnemyBehaviour>().library = library;
                     enemy.GetComponent<EnemyBehaviour>().player = player;
+                    enemy.GetComponent<EnemyBehaviour>().boxOfFragments = boxOfFragments;
                     enemiesCounter += 1;
                 }
             }

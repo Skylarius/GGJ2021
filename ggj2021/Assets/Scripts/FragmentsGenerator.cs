@@ -49,7 +49,7 @@ public class FragmentsGenerator : MonoBehaviour
             CheckFragmentsAndPlaceholders();
             int randomFragmentNumber = Random.Range(0, fragmentsWindow);
             if (isFragmentInTheBox(Fragments[randomFragmentNumber]) == false) {
-                print("Fragment " + randomFragmentNumber + " is not in the box");
+                //print("Fragment " + randomFragmentNumber + " is not in the box");
                 yield return null;
                 continue;
             }
@@ -70,7 +70,7 @@ public class FragmentsGenerator : MonoBehaviour
             FilledPlaceholdersOneHot[randomPlaceholderNumber] = true;
             print("randomFragmentNumber" + randomFragmentNumber);
             print("randomPlaceholderNumber" + randomPlaceholderNumber);
-            print("Fragments.Count" + Fragments.Count);
+            print("GameManager.completedMemoriesCounter " + GameManager.completedMemoriesCounter);
             yield return new WaitForSeconds(5f);
         }
     }
@@ -78,6 +78,10 @@ public class FragmentsGenerator : MonoBehaviour
     void CheckFragmentsAndPlaceholders() {
         for (int i=0; i<FilledPlaceholdersOneHot.Length; i++) {
             if (FilledPlaceholdersOneHot[i] == false) {
+                continue;
+            }
+            if (placeholdersWindow == FilledPlaceholdersOneHot.Length && i <3) {
+                FilledPlaceholdersOneHot[i] = true;
                 continue;
             }
             // if placeholder looks filled
