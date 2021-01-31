@@ -35,6 +35,9 @@ public class EnemyBehaviour : MonoBehaviour
         else {
             transform.localScale = defaultLocalScale;
         }
+        if (GameManager.GameOver) {
+            Destroy(gameObject);
+        }
     }
 
     IEnumerator SetRandomTarget() {
