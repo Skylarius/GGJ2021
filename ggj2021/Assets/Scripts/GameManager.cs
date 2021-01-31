@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static Queue<GameObject> inventory = new Queue<GameObject>(3);
-    public static Queue<GameObject> fragments = new Queue<GameObject>(3);
+    public static int completedMemoriesCounter = 0;
 
     void AddFragmentToInventory(GameObject f)
     {

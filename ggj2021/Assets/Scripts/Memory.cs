@@ -32,6 +32,7 @@ public class Memory : MonoBehaviour
         {
             gameObject.transform.GetChild(2).GetComponent<SpriteRenderer>().sprite = sprite;
             isComplete = true;
+            GameManager.completedMemoriesCounter += 1;
             CompleteMemory();
         }
     }
