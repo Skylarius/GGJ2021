@@ -30,10 +30,10 @@ public class EnemiesGenerator : MonoBehaviour
                     enemiesCounter += 1;
                 }
             }
-            if (GameManager.completedMemoriesCounter > 1 && GameManager.completedMemoriesCounter < 6) {
+            if (GameManager.completedMemoriesCounter > 1 && GameManager.completedMemoriesCounter < 5) {
                 activePlansCounter = 2;
             }
-            if (GameManager.completedMemoriesCounter >= 6) {
+            if (GameManager.completedMemoriesCounter >= 5) {
                 activePlansCounter = 2;
             }
             yield return new WaitForSeconds(5f);
