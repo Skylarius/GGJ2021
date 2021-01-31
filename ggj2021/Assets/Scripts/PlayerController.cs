@@ -118,7 +118,7 @@ public class PlayerController : MonoBehaviour
             return;
         }
         print("BEEN HIT!");
-        GetComponent<Rigidbody>().AddForce(direction * 3 * Time.deltaTime, ForceMode.Impulse);
+        GetComponent<Rigidbody>().AddForce(direction * 6, ForceMode.Impulse);
         StartCoroutine("Invulnerable");
     }
 

@@ -272,8 +272,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  library: {fileID: 0}
-  player: {fileID: 0}
+  library: {fileID: 437620657193267081, guid: 2566dcdfd719660498995c2821c3561b, type: 3}
+  player: {fileID: 5637310984401070489, guid: 41fdcbb1d5dc0b84cab6e58e59043d91, type: 3}
   rotationSpeed: 10
   defaultLocalScale: {x: 0, y: 0, z: 0}
   animator: {fileID: 7887034205390109667}

@@ -39,6 +39,7 @@
      <Compile Include="Assets\Scripts\Cabinet.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\Dialogue.cs" />
+     <Compile Include="Assets\Scripts\EnemiesGenerator.cs" />
      <Compile Include="Assets\Scripts\EnemyBehaviour.cs" />
      <Compile Include="Assets\Scripts\Fragment.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />

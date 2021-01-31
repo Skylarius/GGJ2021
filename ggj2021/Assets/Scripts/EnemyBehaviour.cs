@@ -54,6 +54,7 @@ public class EnemyBehaviour : MonoBehaviour
     }
 
     void Die() {
+        EnemiesGenerator.enemiesCounter -=1;
         StartCoroutine("DieCoroutine");
     }
 
