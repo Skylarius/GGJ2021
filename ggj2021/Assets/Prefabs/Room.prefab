@@ -17,7 +17,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &123384519243466532
 Transform:
@@ -144,7 +144,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &123384520035298662
 Transform:
@@ -186,7 +186,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d23e34e0c8ff08d48973a303446adade, type: 2}
+  - {fileID: 2100000, guid: f68e1330ce7fba3498ec1fcae6684667, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -246,8 +246,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 123384520123480948}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.5, y: 3.44, z: 0}
-  m_LocalScale: {x: 1, y: 6.46, z: 8}
+  m_LocalPosition: {x: -12.3, y: 3.44, z: 0}
+  m_LocalScale: {x: 0.5, y: 6.46, z: 8}
   m_Children:
   - {fileID: 123384521233798770}
   - {fileID: 123384520544633595}
@@ -313,7 +313,7 @@ GameObject:
   - component: {fileID: 123384520265725593}
   - component: {fileID: 123384520265725596}
   - component: {fileID: 123384520265725598}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Wall_door (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -366,7 +366,7 @@ GameObject:
   - component: {fileID: 123384520544633595}
   - component: {fileID: 123384520544633598}
   - component: {fileID: 123384520544633592}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Wall_door (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -425,7 +425,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &123384520988018531
 Transform:
@@ -467,7 +467,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d23e34e0c8ff08d48973a303446adade, type: 2}
+  - {fileID: 2100000, guid: f68e1330ce7fba3498ec1fcae6684667, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -512,7 +512,7 @@ GameObject:
   - component: {fileID: 123384521233798770}
   - component: {fileID: 123384521233798669}
   - component: {fileID: 123384521233798671}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Wall_door (0)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
