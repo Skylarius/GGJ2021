@@ -257,11 +257,11 @@ MonoBehaviour:
   interactionButton: {fileID: 437620657662299034}
   depositSound: {fileID: 2286067510976051099}
   depositSounds:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 5c917a36aeafa3a49b964067aa44f4e4, type: 3}
+  - {fileID: 8300000, guid: 5deffb16e3038f745a912319aa5a6a6c, type: 3}
+  - {fileID: 8300000, guid: 98cca1abd776836489d1cf6e79dfc33c, type: 3}
+  - {fileID: 8300000, guid: ea7c2a8c1fc375245a9e06e5b6da0e75, type: 3}
+  - {fileID: 8300000, guid: 834ad781411539543ac0231e39fd9832, type: 3}
 --- !u!82 &2286067510976051099
 AudioSource:
   m_ObjectHideFlags: 0
