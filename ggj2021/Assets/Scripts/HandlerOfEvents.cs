@@ -12,7 +12,7 @@ public class HandlerOfEvents : MonoBehaviour
     public GameObject[] roomToDisable;
     public GameObject[] otherThingsToEnable;
 
-    public bool triggerGameOver = false;
+    public static bool triggerGameOver = false;
     void Start()
     {   
         StartCoroutine("GameOverCoroutine");
@@ -23,6 +23,9 @@ public class HandlerOfEvents : MonoBehaviour
     {
         if (triggerGameOver) {
             GameManager.GameOver = true;
+        }
+        if (GameManager.GameOver == true) {
+            triggerGameOver = true;
         }
     }
 

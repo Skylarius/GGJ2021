@@ -10,12 +10,14 @@ public class Cabinet : MonoBehaviour
     public AudioSource depositSound;
     public AudioClip[] depositSounds = new AudioClip[5];
     bool isPlayerNearby = false;
+    public GameObject Memories;
 
     // Start is called before the first frame update
     void Start()
     {
         interactionButton.SetActive(false);
-        GameObject Mems = gameObject.transform.GetChild(2).gameObject;
+        //GameObject Mems = gameObject.transform.GetChild(2).gameObject;
+        GameObject Mems = Memories;
 
         for (int i = 0; i < 10; i++)
         {
@@ -98,6 +100,7 @@ public class Cabinet : MonoBehaviour
         {
             if (memory.GetComponent<Memory>().isComplete == false && memory.GetComponent<Memory>().fragments.Count > 0)
             {
+                print("Stealing memory " + memory.name);
                 GameObject fragment = memory.GetComponent<Memory>().RemoveFragment();
 
                 return fragment;
