@@ -53,6 +53,7 @@ public class FragmentsGenerator : MonoBehaviour
                 yield return null;
                 continue;
             }
+            yield return new WaitForSeconds(2.5f);
             List<int> freePlaceholders = new List<int>();
             for (int i=0; i<placeholdersWindow; i++) {
                 if (FilledPlaceholdersOneHot[i] == false) {
@@ -65,9 +66,11 @@ public class FragmentsGenerator : MonoBehaviour
             }
             int randomPlaceholderNumber = freePlaceholders[Random.Range(0, freePlaceholders.Count)];
             GameObject fragment = Fragments[randomFragmentNumber];
-            Vector3 placeholderPosition = Placeholders[randomPlaceholderNumber].position;
-            fragment.transform.position = placeholderPosition;
-            FilledPlaceholdersOneHot[randomPlaceholderNumber] = true;
+            if (fragment.activeSelf) {
+                Vector3 placeholderPosition = Placeholders[randomPlaceholderNumber].position;
+                fragment.transform.position = placeholderPosition;
+                FilledPlaceholdersOneHot[randomPlaceholderNumber] = true;
+            }
             print("randomFragmentNumber" + randomFragmentNumber);
             print("randomPlaceholderNumber" + randomPlaceholderNumber);
             print("GameManager.completedMemoriesCounter " + GameManager.completedMemoriesCounter);
@@ -87,7 +90,7 @@ public class FragmentsGenerator : MonoBehaviour
             // if placeholder looks filled
             bool filled = false;
             foreach (GameObject fragment in Fragments) {
-                if (fragment.activeSelf && Vector3.Distance(fragment.transform.position, Placeholders[i].position) < 1.5f) {
+                if (fragment.activeSelf && Vector3.Distance(fragment.transform.position, Placeholders[i].position) < 5f) {
                     filled = true;
                     break;
                 }

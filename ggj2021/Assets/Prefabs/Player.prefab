@@ -693,6 +693,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   animator: {fileID: 5637310984053084905}
+  blocked: 0
 --- !u!82 &217768402
 AudioSource:
   m_ObjectHideFlags: 0

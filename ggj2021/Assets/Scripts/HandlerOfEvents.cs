@@ -21,6 +21,10 @@ public class HandlerOfEvents : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.F11)) {
+            GameManager.GameOver = true;
+            triggerGameOver = true;
+        }
         if (triggerGameOver) {
             GameManager.GameOver = true;
         }

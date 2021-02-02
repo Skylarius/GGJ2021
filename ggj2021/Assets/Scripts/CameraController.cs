@@ -6,6 +6,7 @@ public class CameraController : MonoBehaviour
 {
     // Start is called before the first frame update
     private Vector3 offset;
+    public Transform[] pointOfInterests;
     public Transform target;
     public float speed = 1;
     public bool blocked = false;
@@ -18,17 +19,27 @@ public class CameraController : MonoBehaviour
     void Update()
     {
         if (blocked) return;
-        if (GetCloserToPlayer() == false) {
+        if (GetCloserToTarget() == false) {
             transform.position = Vector3.Lerp(transform.position, target.position + offset, Time.deltaTime * speed);
         }
     }
 
-    bool GetCloserToPlayer() {
+    bool GetCloserToTarget() {
         RaycastHit hit;
         float distance = Vector3.Magnitude(transform.position - target.transform.position);
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, distance - 2)) {
             transform.position = Vector3.Lerp(transform.position, target.position + Vector3.up * 2, Time.deltaTime * speed * 0.5f);
             return true;
+        }
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.back), out hit, 1)) {
+            transform.position = Vector3.Lerp(transform.position, target.position + Vector3.up * 2, Time.deltaTime * speed * 0.5f);
+            return true;
+        }
+        foreach (Transform point in pointOfInterests) {
+            if (Vector3.Magnitude(point.position - target.transform.position) < 2) {
+                transform.position = Vector3.Lerp(transform.position, point.position + Vector3.back * 5, Time.deltaTime * speed * 0.5f);
+                return true;
+            }
         }
         return false;
     }

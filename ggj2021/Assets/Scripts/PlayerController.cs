@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     public bool isPressingJump = false;
     public bool isJumping = false;
     public bool invulnerable = false;
-    private bool hasJumped = false, hasKilledEnemy = false;
+    private bool hasJumped = false;
     public AudioClip[] audioClips;
     public Animator animator;
     private AudioSource audioSource;

@@ -212,6 +212,9 @@ MonoBehaviour:
   - {fileID: 7887034206806437020, guid: 9bafc200629e3864d8b9e4cbe4c4db39, type: 3}
   - {fileID: 6474467967464391186, guid: e05e3bce70e236446af7a262b95818a7, type: 3}
   - {fileID: 2071199289184163982, guid: 1d0ea85f1c7a1ac40baa9b402b9b11f2, type: 3}
+  player: {fileID: 0}
+  library: {fileID: 0}
+  boxOfFragments: {fileID: 0}
 --- !u!1 &7596343674617198544
 GameObject:
   m_ObjectHideFlags: 0
