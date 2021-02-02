@@ -23,8 +23,11 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (completedMemoriesCounter == 9) {
-            GameOver = true;
+        if (completedMemoriesCounter == 10)
+        {
+            Debug.Log("Triggering Game Over from Manager!");
+            Camera.main.GetComponent<AudioSource>().Stop();
+            HandlerOfEvents.triggerGameOver = true;
         }
     }
 
