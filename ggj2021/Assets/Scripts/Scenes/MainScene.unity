@@ -437,7 +437,7 @@ GameObject:
   - component: {fileID: 199668677}
   - component: {fileID: 199668676}
   - component: {fileID: 199668675}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Wall2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1460,7 +1460,7 @@ GameObject:
   - component: {fileID: 724561212}
   - component: {fileID: 724561211}
   - component: {fileID: 724561210}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Wall2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2147,6 +2147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointOfInterests:
   - {fileID: 1859236558}
+  - {fileID: 1641549652}
   target: {fileID: 828369030}
   speed: 2
   blocked: 0
@@ -3530,7 +3531,7 @@ GameObject:
   - component: {fileID: 1463687516}
   - component: {fileID: 1463687515}
   - component: {fileID: 1463687514}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Door (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3622,7 +3623,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1509643241}
   - component: {fileID: 1509643240}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Door (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3771,6 +3772,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1627025552}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1641549652 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 705970385672679936, guid: 416c04d44cc95a44fa59e1fd558a9c63,
+    type: 3}
+  m_PrefabInstance: {fileID: 705970384917748378}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1645154241
 GameObject:
   m_ObjectHideFlags: 0
@@ -4229,7 +4236,7 @@ GameObject:
   - component: {fileID: 1770130016}
   - component: {fileID: 1770130015}
   - component: {fileID: 1770130014}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Door (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4502,7 +4509,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1956275513}
   - component: {fileID: 1956275514}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}

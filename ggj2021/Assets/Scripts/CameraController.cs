@@ -36,7 +36,7 @@ public class CameraController : MonoBehaviour
             return true;
         }
         foreach (Transform point in pointOfInterests) {
-            if (Vector3.Magnitude(point.position - target.transform.position) < 2) {
+            if (point.gameObject.activeSelf && Vector3.Magnitude(point.position - target.transform.position) < 2) {
                 transform.position = Vector3.Lerp(transform.position, point.position + Vector3.back * 5, Time.deltaTime * speed * 0.5f);
                 return true;
             }

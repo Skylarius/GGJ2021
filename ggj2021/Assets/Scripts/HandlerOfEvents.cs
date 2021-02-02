@@ -49,7 +49,7 @@ public class HandlerOfEvents : MonoBehaviour
                 }
             }
         }
-        while (Vector3.Distance(player.transform.position, piano.transform.position) > 3) {
+        while (Vector3.Distance(player.transform.position, piano.transform.position) > 1.5f) {
             yield return null;
         }
         player.GetComponent<PlayerController>().blocked = true;
