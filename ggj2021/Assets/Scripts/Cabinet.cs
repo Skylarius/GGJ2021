@@ -30,11 +30,11 @@ public class Cabinet : MonoBehaviour
     {
         if(isPlayerNearby)
         {
-            if(Input.GetKeyDown(KeyCode.E) && GameManager.inventory.Count > 0)
+            if(Input.GetKeyDown(KeyCode.E) && GameManager.inventory.Count > 0 && !Memory.gameIsPaused)
             {
                 DepositOneFragment();
             }
-        }
+        }     
     }
 
     //Detect if player is nearby.
@@ -49,6 +49,11 @@ public class Cabinet : MonoBehaviour
             Debug.Log("It's a player!");
             interactionButton.SetActive(true);
             isPlayerNearby = true;
+        }
+        else if (col.gameObject.tag == "Thief")
+        {
+            Debug.Log("It's a thief!");
+            StealFragment();
         }
     }
 

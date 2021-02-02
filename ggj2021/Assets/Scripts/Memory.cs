@@ -34,14 +34,7 @@ public class Memory : MonoBehaviour
         {
             gameObject.transform.GetChild(2).GetComponent<SpriteRenderer>().sprite = sprite;
             isComplete = true;
-            GameManager.completedMemoriesCounter += 1;
-            Debug.Log(GameManager.completedMemoriesCounter);
-            if(GameManager.completedMemoriesCounter == 10)
-            {
-                Camera.main.GetComponent<AudioSource>().Stop();
-                HandlerOfEvents.triggerGameOver = true;
-                GameManager.GameOver = true;
-            }
+            
             CompleteMemory();
         }
     }
@@ -59,16 +52,9 @@ public class Memory : MonoBehaviour
     public void CompleteMemory()
     {
         gameIsPaused = true;
-        if (GameManager.GameOver) {
-            gameIsPaused = false;
-            Time.timeScale = 1f;
-            return;
-        }
+        
         Time.timeScale = 0f;
         transform.parent.parent.GetChild(0).gameObject.GetComponent<SpriteRenderer>().sprite = sprite;
-        //messageBackground.GetComponent<Image>().enabled = true;
-        //dialogueBox.SetActive(true);
-        //dialogueText.text = dialogue.sentence;
     }
 
     // Start is called before the first frame update
@@ -86,11 +72,11 @@ public class Memory : MonoBehaviour
         {
             if(gameIsPaused)
             {
-                //messageBackground.GetComponent<Image>().enabled = false;
-                //dialogueBox.SetActive(false);
                 transform.parent.parent.GetChild(0).gameObject.GetComponent<SpriteRenderer>().sprite = null;
                 gameIsPaused = false;
                 Time.timeScale = 1f;
+                GameManager.completedMemoriesCounter += 1;
+                Debug.Log(GameManager.completedMemoriesCounter);
             }
         }
     }

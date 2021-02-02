@@ -11,10 +11,12 @@ public class HandlerOfEvents : MonoBehaviour
     public GameObject[] objectsToEnable;
     public GameObject[] roomToDisable;
     public GameObject[] otherThingsToEnable;
+    public AudioSource audioFinale;
 
     public static bool triggerGameOver = false;
     void Start()
-    {   
+    {
+        audioFinale = gameObject.GetComponent<AudioSource>();
         StartCoroutine("GameOverCoroutine");
     }
 
@@ -52,6 +54,8 @@ public class HandlerOfEvents : MonoBehaviour
         while (Vector3.Distance(player.transform.position, piano.transform.position) > 1.5f) {
             yield return null;
         }
+
+        audioFinale.Play();
         player.GetComponent<PlayerController>().blocked = true;
         myCamera.GetComponent<CameraController>().blocked = true;
         foreach (GameObject o in roomToDisable) {
