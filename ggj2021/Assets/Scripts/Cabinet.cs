@@ -30,7 +30,7 @@ public class Cabinet : MonoBehaviour
     {
         if(isPlayerNearby)
         {
-            if(Input.GetKeyDown(KeyCode.E) && GameManager.inventory.Count > 0 && !Memory.gameIsPaused)
+            if(Input.GetButtonDown("Action") && GameManager.inventory.Count > 0 && !Memory.gameIsPaused)
             {
                 DepositOneFragment();
             }
