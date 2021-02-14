@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("Triggering Game Over from Manager!");
             Camera.main.GetComponent<AudioSource>().Stop();
             HandlerOfEvents.triggerGameOver = true;
+            GameOver = true;
         }
     }
 

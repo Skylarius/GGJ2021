@@ -11,6 +11,7 @@ public class Cabinet : MonoBehaviour
     public AudioClip[] depositSounds = new AudioClip[5];
     bool isPlayerNearby = false;
     public GameObject Memories;
+    public GameObject MemoryTextUI;
 
     // Start is called before the first frame update
     void Start()
@@ -75,7 +76,8 @@ public class Cabinet : MonoBehaviour
         RandomDepositSound();
         GameObject fragment = GameManager.inventory.Dequeue();
         GameObject memory = fragment.GetComponent<Fragment>().memory;
-        player.transform.GetChild(0).GetChild(inventoryCount - 1).gameObject.GetComponent<SpriteRenderer>().sprite = null;
+        Transform inventory = player.transform.GetChild(0);
+        inventory.GetChild(inventoryCount - 1).gameObject.GetComponent<SpriteRenderer>().sprite = null;
         RandomDepositSound();
         memory.GetComponent<Memory>().AddFragment(fragment);
     }

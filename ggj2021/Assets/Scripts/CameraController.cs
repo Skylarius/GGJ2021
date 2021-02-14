@@ -20,7 +20,10 @@ public class CameraController : MonoBehaviour
     {
         if (blocked) return;
         if (GetCloserToTarget() == false) {
-            transform.position = Vector3.Lerp(transform.position, target.position + offset, Time.deltaTime * speed);
+            transform.position = Vector3.Lerp(
+                transform.position,
+                Vector3.right * (target.position.x + offset.x) + Vector3.up * 4 + Vector3.forward * (target.position.z + offset.z),
+                Time.deltaTime * speed);
         }
     }
 
@@ -31,7 +34,7 @@ public class CameraController : MonoBehaviour
             transform.position = Vector3.Lerp(transform.position, target.position + Vector3.up * 2, Time.deltaTime * speed * 0.5f);
             return true;
         }
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.back), out hit, 1)) {
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.back), out hit, 2)) {
             transform.position = Vector3.Lerp(transform.position, target.position + Vector3.up * 2, Time.deltaTime * speed * 0.5f);
             return true;
         }

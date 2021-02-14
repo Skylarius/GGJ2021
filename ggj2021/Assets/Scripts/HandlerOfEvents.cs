@@ -20,21 +20,6 @@ public class HandlerOfEvents : MonoBehaviour
         StartCoroutine("GameOverCoroutine");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.F11)) {
-            GameManager.GameOver = true;
-            triggerGameOver = true;
-        }
-        if (triggerGameOver) {
-            GameManager.GameOver = true;
-        }
-        if (GameManager.GameOver == true) {
-            triggerGameOver = true;
-        }
-    }
-
     IEnumerator GameOverCoroutine() {
         while (GameManager.GameOver == false) {
             yield return null;

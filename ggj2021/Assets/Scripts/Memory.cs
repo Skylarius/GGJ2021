@@ -54,7 +54,9 @@ public class Memory : MonoBehaviour
         gameIsPaused = true;
         
         Time.timeScale = 0f;
-        transform.parent.parent.GetChild(0).gameObject.GetComponent<SpriteRenderer>().sprite = sprite;
+        GameObject textUI = transform.parent.parent.gameObject.GetComponent<Cabinet>().MemoryTextUI;
+        textUI.SetActive(true);
+        textUI.GetComponent<Image>().sprite = sprite;
     }
 
     // Start is called before the first frame update
@@ -72,7 +74,9 @@ public class Memory : MonoBehaviour
         {
             if(gameIsPaused)
             {
-                transform.parent.parent.GetChild(0).gameObject.GetComponent<SpriteRenderer>().sprite = null;
+                GameObject textUI = transform.parent.parent.gameObject.GetComponent<Cabinet>().MemoryTextUI;
+                textUI.SetActive(false);
+                textUI.GetComponent<Image>().sprite = null;
                 gameIsPaused = false;
                 Time.timeScale = 1f;
                 GameManager.completedMemoriesCounter += 1;
