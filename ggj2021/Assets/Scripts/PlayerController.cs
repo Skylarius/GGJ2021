@@ -13,20 +13,29 @@ public class PlayerController : MonoBehaviour
     public AudioClip[] audioClips;
     public Animator animator;
     private AudioSource audioSource;
+    private Rigidbody rb;
+    public SpriteRenderer mainSpriteRenderer;
 
     public bool blocked = false;
     // Start is called before the first frame update
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        rb = GetComponent<Rigidbody>();
         StartCoroutine("StateMachine");
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (blocked ==  false) {
             Move();
+        }
+    }
+
+    void Update()
+    {
+        if (blocked ==  false) {
             Jump();
         }
     }
@@ -43,7 +52,7 @@ public class PlayerController : MonoBehaviour
     void Move() {
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
-        transform.position += (Vector3.right * x + Vector3.forward * z) * speed * Time.deltaTime;
+        rb.position += (Vector3.right * x + Vector3.forward * z) * speed * Time.deltaTime;
     }
 
     void Jump() {
@@ -51,11 +60,11 @@ public class PlayerController : MonoBehaviour
             // Does the ray intersect any objects excluding the player layer
             if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), 1.2f))
             {
-                GetComponent<Rigidbody>().AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+                rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
                 hasJumped = true;
             }
         }
-        isJumping = (GetComponent<Rigidbody>().velocity.y < -0.1 || GetComponent<Rigidbody>().velocity.y > 0.1);
+        isJumping = (rb.velocity.y < -0.1 || rb.velocity.y > 0.1);
 
         if (isJumping) {
             RaycastHit hit;
@@ -122,13 +131,28 @@ public class PlayerController : MonoBehaviour
             return;
         }
         print("BEEN HIT!");
-        GetComponent<Rigidbody>().AddForce(direction * 6, ForceMode.Impulse);
+        rb.AddForce(direction * 6, ForceMode.Impulse);
         StartCoroutine("Invulnerable");
     }
 
     IEnumerator Invulnerable() {
         invulnerable = true;
-        yield return new WaitForSeconds(3f);
+        Color color = mainSpriteRenderer.color;
+        float time = Time.time;
+        float deltaAlpha = -0.05f;
+        while(Time.time < time + 3) {
+            color.a += deltaAlpha;
+            mainSpriteRenderer.color = color;
+            deltaAlpha = (color.a < 0.33f || color.a > 0.99f) ? -deltaAlpha : deltaAlpha;
+            yield return null;
+        }
+        while (mainSpriteRenderer.color.a < 1) {
+            color.a += 0.1f;
+            mainSpriteRenderer.color = color;
+            yield return null;
+        }
+        color.a = 1;
+        mainSpriteRenderer.color = color;
         invulnerable = false;
     }
 }

@@ -17,19 +17,19 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine("GameOverCoroutine");   
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if (completedMemoriesCounter == 10)
-        {
-            Debug.Log("Triggering Game Over from Manager!");
-            Camera.main.GetComponent<AudioSource>().Stop();
-            HandlerOfEvents.triggerGameOver = true;
-            GameOver = true;
+
+    IEnumerator GameOverCoroutine() {
+        while (completedMemoriesCounter < 10) {
+            yield return null;
         }
+        Debug.Log("Triggering Game Over from Manager!");
+        Camera.main.GetComponent<AudioSource>().Stop();
+        HandlerOfEvents.triggerGameOver = true;
+        GameOver = true;
     }
 
     

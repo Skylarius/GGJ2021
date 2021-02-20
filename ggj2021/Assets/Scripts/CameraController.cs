@@ -34,7 +34,7 @@ public class CameraController : MonoBehaviour
             transform.position = Vector3.Lerp(transform.position, target.position + Vector3.up * 2, Time.deltaTime * speed * 0.5f);
             return true;
         }
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.back), out hit, 2)) {
+        else if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.back), out hit, 1)) {
             transform.position = Vector3.Lerp(transform.position, target.position + Vector3.up * 2, Time.deltaTime * speed * 0.5f);
             return true;
         }
