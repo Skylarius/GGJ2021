@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
+
     void FixedUpdate()
     {
         if (blocked ==  false) {
@@ -50,9 +51,9 @@ public class PlayerController : MonoBehaviour
     }
 
     void Move() {
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
-        rb.position += (Vector3.right * x + Vector3.forward * z) * speed * Time.deltaTime;
+        float x = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
+        float z = Input.GetAxis("Vertical") * speed * Time.deltaTime;
+        rb.MovePosition(transform.position + Vector3.right * x + Vector3.forward * z);
     }
 
     void Jump() {
@@ -64,7 +65,6 @@ public class PlayerController : MonoBehaviour
                 hasJumped = true;
             }
         }
-        isJumping = (rb.velocity.y < -0.1 || rb.velocity.y > 0.1);
 
         if (isJumping) {
             RaycastHit hit;
@@ -75,11 +75,13 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+        isJumping = Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), 1f) == false;
     }
 
     void AnimationStateMachine() {
         animator.SetFloat("X_direction", Input.GetAxis("Horizontal"));
         animator.SetFloat("Z_direction", Input.GetAxis("Vertical"));
+        animator.SetBool("X_greater_than_Z", Input.GetAxis("Horizontal") * Input.GetAxis("Horizontal") > Input.GetAxis("Vertical") * Input.GetAxis("Vertical"));
         animator.SetBool("isJumping", isJumping);
     }
 
@@ -140,16 +142,17 @@ public class PlayerController : MonoBehaviour
         Color color = mainSpriteRenderer.color;
         float time = Time.time;
         float deltaAlpha = -0.05f;
+        WaitForSeconds wts = new WaitForSeconds(0.02f);
         while(Time.time < time + 3) {
             color.a += deltaAlpha;
             mainSpriteRenderer.color = color;
             deltaAlpha = (color.a < 0.33f || color.a > 0.99f) ? -deltaAlpha : deltaAlpha;
-            yield return null;
+            yield return wts;
         }
         while (mainSpriteRenderer.color.a < 1) {
             color.a += 0.1f;
             mainSpriteRenderer.color = color;
-            yield return null;
+            yield return wts;
         }
         color.a = 1;
         mainSpriteRenderer.color = color;

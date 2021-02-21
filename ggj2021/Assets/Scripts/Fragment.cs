@@ -14,11 +14,6 @@ public class Fragment : MonoBehaviour
         fragment = gameObject;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     void OnCollisionEnter(Collision col)
     {
@@ -26,11 +21,11 @@ public class Fragment : MonoBehaviour
         {            
             if(GameManager.inventory.Count < 3)
             {
+                fragment.SetActive(false);
                 GameManager.inventory.Enqueue(fragment);
                 col.gameObject.transform.GetChild(0).GetChild(GameManager.inventory.Count - 1).gameObject.GetComponent<SpriteRenderer>().sprite = gameObject.GetComponent<SpriteRenderer>().sprite;
                 pickUpSound = gameObject.transform.parent.gameObject.GetComponent<PickUpSoundsManagement>().ReproducePickUpSound();
                 AudioSource.PlayClipAtPoint(pickUpSound, Camera.main.transform.position);            
-                fragment.SetActive(false);
             }
         }
     }

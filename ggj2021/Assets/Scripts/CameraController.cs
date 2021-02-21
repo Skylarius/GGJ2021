@@ -16,7 +16,7 @@ public class CameraController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (blocked) return;
         if (GetCloserToTarget() == false) {
