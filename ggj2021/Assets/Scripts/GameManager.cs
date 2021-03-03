@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
 
     IEnumerator GameOverCoroutine() {
-        while (completedMemoriesCounter < 1) {
+        while (completedMemoriesCounter < 10) {
             yield return null;
         }
         Debug.Log("Triggering Game Over from Manager!");
