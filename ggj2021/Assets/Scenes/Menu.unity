@@ -306,6 +306,12 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1621298472 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7173671089569931090, guid: b6f5be412cb34974586ce6bbb4ae06c9,
+    type: 3}
+  m_PrefabInstance: {fileID: 7173671090104607586}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1805781119
 GameObject:
   m_ObjectHideFlags: 0
@@ -355,7 +361,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 1621298472}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &1805781122
@@ -502,6 +508,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: d7de892cf9e2d0544a5682621fc20920,
         type: 3}
+    - target: {fileID: 7173671089569931089, guid: b6f5be412cb34974586ce6bbb4ae06c9,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.50980395
+      objectReference: {fileID: 0}
     - target: {fileID: 7173671089569931091, guid: b6f5be412cb34974586ce6bbb4ae06c9,
         type: 3}
       propertyPath: m_AnchorMax.x
