@@ -44,6 +44,9 @@ public class PlayerController : MonoBehaviour
     IEnumerator StateMachine() {
         while (true)
         {
+            while (Time.deltaTime == 0) {
+                yield return null;
+            }
             AnimationStateMachine();
             AudioStateMachine();
             yield return null;
@@ -70,7 +73,7 @@ public class PlayerController : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, 1.2f))
             {
-                if (hit.transform.tag == "Thief") {
+                if (hit.transform.tag == "Thief" && invulnerable == false) {
                     hit.transform.gameObject.SendMessage("Die");
                 }
             }

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class HandlerOfEvents : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject player, piano, myCamera, finalPointOfCamera;
+    public GameObject player, piano, stool, myCamera, finalPointOfCamera;
     public GameObject[] objectsToDisable;
     public GameObject[] objectsToEnable;
     public GameObject[] roomToDisable;
@@ -36,7 +36,7 @@ public class HandlerOfEvents : MonoBehaviour
                 }
             }
         }
-        while (Vector3.Distance(player.transform.position, piano.transform.position) > 1.5f) {
+        while (Vector3.Distance(player.transform.position, stool.transform.position) > 0.5f) {
             yield return null;
         }
 
