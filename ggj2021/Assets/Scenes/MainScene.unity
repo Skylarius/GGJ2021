@@ -1754,15 +1754,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundtracks:
-  - {fileID: 8300000, guid: 2d35f8d9b4d6fc94bb38a26176050125, type: 3}
-  - {fileID: 8300000, guid: 3aae543333a63c24c8ded30fb69066c8, type: 3}
-  - {fileID: 8300000, guid: 2d35f8d9b4d6fc94bb38a26176050125, type: 3}
-  - {fileID: 8300000, guid: 3aae543333a63c24c8ded30fb69066c8, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 80678f4de8f175d429ded03996f78ca5, type: 3}
+  - {fileID: 8300000, guid: fda55b288bb3c8e40939ab3219074636, type: 3}
+  - {fileID: 8300000, guid: 37c92e590fc20bf4da33d9bda410805a, type: 3}
+  - {fileID: 8300000, guid: 81b56b42f58c4cc4984bf781512c377c, type: 3}
+  - {fileID: 8300000, guid: 726d4b61821a8c94dbb80ea375f99aa9, type: 3}
+  - {fileID: 8300000, guid: ae5c9858f4deaff409c2affda57c9042, type: 3}
+  - {fileID: 8300000, guid: 46a98f892cdde534ea0d3dfec13dd6df, type: 3}
+  - {fileID: 8300000, guid: c72837c03f2804443a4329cd9361909f, type: 3}
+  - {fileID: 8300000, guid: ccbdf8344b3b529428601badf8ae1f5d, type: 3}
 --- !u!4 &789363787
 Transform:
   m_ObjectHideFlags: 0
@@ -2301,7 +2301,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.03
+  m_Volume: 0.35
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2785,6 +2785,11 @@ PrefabInstance:
       propertyPath: MemoryTextUI
       value: 
       objectReference: {fileID: 423067530}
+    - target: {fileID: 2286067510976051099, guid: 2566dcdfd719660498995c2821c3561b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2566dcdfd719660498995c2821c3561b, type: 3}
 --- !u!1 &1228194869
