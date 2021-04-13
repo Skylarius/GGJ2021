@@ -12,6 +12,8 @@ public class Memory : MonoBehaviour
     public Sprite sprite;
     private Text dialogueText;
     private GameObject dialogueBox;
+    private GameObject soundManager;
+    private AudioSource gameAudio;
 
     public static bool gameIsPaused = false;
 
@@ -65,6 +67,8 @@ public class Memory : MonoBehaviour
         print(gameObject.name);
         dialogueBox = GameObject.Find("DialogueBox");
         dialogueText = GameObject.Find("DialogueBox").GetComponent<Text>();
+        soundManager = GameObject.Find("SoundtrackManager");
+        gameAudio = Camera.main.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -80,6 +84,8 @@ public class Memory : MonoBehaviour
                 gameIsPaused = false;
                 Time.timeScale = 1f;
                 GameManager.completedMemoriesCounter += 1;
+                gameAudio.clip = soundManager.GetComponent<SoundtrackManager>().soundtracks[GameManager.completedMemoriesCounter - 1];
+                gameAudio.Play();
                 Debug.Log(GameManager.completedMemoriesCounter);
             }
         }
